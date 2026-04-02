@@ -28,7 +28,7 @@ const instrumentSerifArt = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Trịnh Văn Hào Portfolio",
+  title: "Trịnh Văn Hào",
   description: "Thư viện giao diện và prompt thiết kế bởi Trịnh Văn Hào",
 };
 
