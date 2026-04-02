@@ -116,7 +116,7 @@ function PromoCardView({ item }: { item: Extract<GridItem, { kind: "promo" }> })
             unoptimized 
             width={220} 
             height={220}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", width: "auto" }}
           />
         </div>
 
@@ -145,7 +145,7 @@ export default function Home() {
               src={BRAND_LOGO_SRC}
               unoptimized
               width={160}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "contain", width: "auto" }}
             />
             <span className="font-[var(--font-display)] text-sm sm:text-base md:text-lg text-foreground tracking-[0.08em] whitespace-nowrap hover:text-purple-300 transition-colors duration-300">
               Promptverse
