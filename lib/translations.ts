@@ -7,8 +7,10 @@ export const translations = {
             instructions: "Hướng dẫn",
             pricing: "Bảng giá",
             backgrounds: "Nền động",
+            backgroundsNew: "Nền động Mới",
             unlimitedAccess: "Truy cập không giới hạn",
             backToLibrary: "Quay về thư viện",
+            newBadge: "Mới",
         },
         // Hero Section
         hero: {
@@ -72,8 +74,10 @@ export const translations = {
             instructions: "Instructions",
             pricing: "Pricing",
             backgrounds: "Backgrounds",
+            backgroundsNew: "Backgrounds New",
             unlimitedAccess: "Unlimited Access",
             backToLibrary: "Back to Library",
+            newBadge: "New",
         },
         // Hero Section
         hero: {

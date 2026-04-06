@@ -197,15 +197,23 @@ export default function Home() {
           </Link>
 
           <div className="hidden md:flex items-center gap-1 sm:gap-2">
-            {HOME_PAGE_DATA.menuLinks.map((menuLink) => {
-              const label = menuLink.isNew ? menuLink.text.replace(/\s+New$/, "") : menuLink.text;
+            {HOME_PAGE_DATA.menuLinks.map((menuLink, index) => {
+              // Get translated label based on menu item
+              let label = menuLink.text;
+              if (menuLink.href.includes("/pages/backgrounds")) {
+                label = t.nav.backgrounds;
+              } else if (menuLink.href.includes("/instructions")) {
+                label = t.nav.instructions;
+              } else if (menuLink.href.includes("/pages/pricing")) {
+                label = t.nav.pricing;
+              }
 
               if (isUnlimitedHref(menuLink.href)) {
                 return (
                   <button
                     className="px-3 sm:px-4 py-2 text-muted-foreground text-sm font-medium rounded-lg hover:text-foreground hover:bg-white/5 transition-all duration-300 flex items-center group"
                     key={menuLink.href}
-                    onClick={() => openUnlockModal(menuLink.text)}
+                    onClick={() => openUnlockModal(label)}
                     type="button"
                   >
                     <span className="relative group-hover:-translate-y-0.5 transition-transform duration-300 inline-block">{label}</span>
@@ -244,7 +252,7 @@ export default function Home() {
                           color: "transparent",
                         }}
                       >
-                        Mới
+                        {t.nav.newBadge}
                       </span>
                     </span>
                   ) : null}
@@ -254,10 +262,10 @@ export default function Home() {
 
             <button
               className="px-5 py-2 bg-foreground text-background text-sm font-medium rounded-lg hover:opacity-90 hover:scale-105 hover:bg-neutral-200 transition-all duration-300 ml-2"
-              onClick={() => openUnlockModal(HOME_PAGE_DATA.primaryNavLink.text)}
+              onClick={() => openUnlockModal(t.nav.unlimitedAccess)}
               type="button"
             >
-              {HOME_PAGE_DATA.primaryNavLink.text}
+              {t.nav.unlimitedAccess}
             </button>
 
             <LanguageSwitcher />
