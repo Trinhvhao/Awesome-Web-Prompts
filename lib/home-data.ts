@@ -64,7 +64,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "isNew": true
     },
     {
-      "text": "Instructions",
+      "text": "Hướng dẫn",
       "href": "/instructions",
       "isNew": false
     },

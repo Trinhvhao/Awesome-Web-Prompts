@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Copy, Sparkles, Zap, Code2, Bolt, Heart, Terminal, MessageSquare, Lightbulb, Wand2, Cpu, Boxes, Rocket, Palette, Layers, Zap as Lightning, Sparkle, Brain, Globe } from "lucide-react";
+import { LanguageSwitcher, useLanguage } from "@/components/language-switcher";
+import { getTranslation } from "@/lib/translations";
 
 const BRAND_NAME = "Trịnh Văn Hào";
 const BRAND_LOGO_SRC = "/assets/images/assets/tvh.png";
@@ -105,6 +109,14 @@ const SUPPORTED_TOOLS = [
 ];
 
 export default function InstructionsPage() {
+  const language = useLanguage();
+  const t = getTranslation(language);
+
+  // Prevent rendering until translations are loaded
+  if (!t || !t.instructions) {
+    return null;
+  }
+
   return (
     <main className="min-h-screen bg-background">
       <nav className="sticky top-0 z-50 w-full bg-background/70 backdrop-blur-xl border-b border-white/5 transition-all duration-500 hover:bg-background/90">
@@ -118,20 +130,25 @@ export default function InstructionsPage() {
               unoptimized
               width={160}
               style={{ objectFit: "contain" }}
+              priority
             />
             <span className="font-[var(--font-display)] text-sm sm:text-base md:text-lg text-foreground tracking-[0.08em] whitespace-nowrap hover:text-purple-300 transition-colors duration-300">
               Promptverse
             </span>
           </Link>
 
-          <Link
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10"
-            href="/"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span className="hidden sm:inline">Quay về thư viện</span>
-            <span className="sm:hidden">Quay về</span>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10"
+              href="/"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span className="hidden sm:inline">{t.nav.backToLibrary}</span>
+              <span className="sm:hidden">Quay về</span>
+            </Link>
+
+            <LanguageSwitcher />
+          </div>
         </div>
       </nav>
 
@@ -139,15 +156,15 @@ export default function InstructionsPage() {
         <header className="mb-10 rounded-3xl border border-white/10 bg-neutral-900/70 p-6 sm:p-8">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-400/25 bg-purple-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-purple-100">
             <Sparkles className="h-3.5 w-3.5" />
-            Hướng dẫn sử dụng
+            {t.instructions.badge}
           </div>
 
           <h1 className="text-3xl font-bold sm:text-4xl mb-4">
-            Copy, Paste & Tạo giao diện đẹp ngay lập tức
+            {t.instructions.title}
           </h1>
 
           <p className="max-w-3xl text-base leading-relaxed text-white/70 mb-6">
-            Các prompt này sẵn sàng để dùng trong các công cụ AI yêu thích của bạn. Không cần chỉnh sửa gì — chỉ cần copy và paste để tạo landing page production-ready với thiết kế đẹp và animation mượt mà.
+            {t.instructions.description}
           </p>
 
           <div className="grid gap-4 sm:grid-cols-3">
@@ -155,30 +172,30 @@ export default function InstructionsPage() {
               <div className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-purple-500/20">
                 <Copy className="h-4 w-4 text-purple-300" />
               </div>
-              <p className="text-sm font-semibold">1. Copy Prompt</p>
-              <p className="mt-1 text-xs text-white/65">Nhấn nút copy trên bất kỳ template nào</p>
+              <p className="text-sm font-semibold">{t.instructions.step1Title}</p>
+              <p className="mt-1 text-xs text-white/65">{t.instructions.step1Desc}</p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
               <div className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-orange-500/20">
                 <Zap className="h-4 w-4 text-orange-300" />
               </div>
-              <p className="text-sm font-semibold">2. Paste vào Tool</p>
-              <p className="mt-1 text-xs text-white/65">Mở v0, Bolt, Cursor, hoặc bất kỳ AI tool nào</p>
+              <p className="text-sm font-semibold">{t.instructions.step2Title}</p>
+              <p className="mt-1 text-xs text-white/65">{t.instructions.step2Desc}</p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
               <div className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-green-500/20">
                 <Sparkles className="h-4 w-4 text-green-300" />
               </div>
-              <p className="text-sm font-semibold">3. Generate & Deploy</p>
-              <p className="mt-1 text-xs text-white/65">Nhận code production-ready ngay lập tức</p>
+              <p className="text-sm font-semibold">{t.instructions.step3Title}</p>
+              <p className="mt-1 text-xs text-white/65">{t.instructions.step3Desc}</p>
             </div>
           </div>
         </header>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-6">Các công cụ hỗ trợ</h2>
+          <h2 className="text-2xl font-bold mb-6">{t.instructions.supportedTools}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3">
             {SUPPORTED_TOOLS.map((tool, index) => {
               const Icon = tool.icon;
@@ -206,23 +223,23 @@ export default function InstructionsPage() {
         </section>
 
         <section className="rounded-3xl border border-white/10 bg-gradient-to-br from-purple-500/10 via-orange-500/5 to-transparent p-6 sm:p-8">
-          <h2 className="text-xl font-semibold mb-4">Mẹo hay</h2>
+          <h2 className="text-xl font-semibold mb-4">{t.instructions.proTips}</h2>
           <ul className="space-y-3 text-sm text-white/75">
             <li className="flex gap-3">
               <span className="text-purple-400 font-bold">•</span>
-              <span><strong className="text-white">Dùng model mạnh hơn</strong> — Claude Sonnet 3.5, GPT-4, hoặc Gemini Pro cho kết quả tốt hơn với ít lần chỉnh sửa</span>
+              <span><strong className="text-white">{t.instructions.tip1}</strong> — {t.instructions.tip1Desc}</span>
             </li>
             <li className="flex gap-3">
               <span className="text-orange-400 font-bold">•</span>
-              <span><strong className="text-white">Thêm chi tiết thương hiệu</strong> — Bổ sung màu sắc, font chữ và nội dung của bạn để cá nhân hóa output</span>
+              <span><strong className="text-white">{t.instructions.tip2}</strong> — {t.instructions.tip2Desc}</span>
             </li>
             <li className="flex gap-3">
               <span className="text-green-400 font-bold">•</span>
-              <span><strong className="text-white">Tinh chỉnh từng section</strong> — Chỉnh hero, features, hoặc CTA riêng biệt để kiểm soát chính xác</span>
+              <span><strong className="text-white">{t.instructions.tip3}</strong> — {t.instructions.tip3Desc}</span>
             </li>
             <li className="flex gap-3">
               <span className="text-blue-400 font-bold">•</span>
-              <span><strong className="text-white">Kiểm tra responsive</strong> — Luôn kiểm tra trên mobile và desktop trước khi deploy</span>
+              <span><strong className="text-white">{t.instructions.tip4}</strong> — {t.instructions.tip4Desc}</span>
             </li>
           </ul>
         </section>

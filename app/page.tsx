@@ -8,6 +8,8 @@ import { useCallback, useState, type ReactNode } from "react";
 import { HOME_PAGE_DATA, type GridItem, type TemplateCard } from "@/lib/home-data";
 import UnlockContactModal from "@/components/unlock-contact-modal";
 import CopyPromptButton from "../components/copy-prompt-button";
+import { LanguageSwitcher, useLanguage } from "@/components/language-switcher";
+import { getTranslation } from "@/lib/translations";
 
 const BRAND_NAME = "Trịnh Văn Hào";
 const BRAND_LOGO_SRC = "/assets/images/assets/tvh.png";
@@ -58,6 +60,8 @@ function MenuIcon() {
 }
 
 function TemplateCardView({ item, onUnlock }: { item: TemplateCard; onUnlock: (title: string) => void }) {
+  const language = useLanguage();
+  const t = getTranslation(language);
   const shouldPrioritizeMedia = item.hasLoader && item.media.length === 1;
 
   return (
@@ -102,7 +106,7 @@ function TemplateCardView({ item, onUnlock }: { item: TemplateCard; onUnlock: (t
             type="button"
           >
             <Lock className="h-4 w-4" />
-            Unlock
+            {t.cards.unlock}
           </button>
         )}
       </div>
@@ -155,6 +159,8 @@ function PromoCardView({ item }: { item: Extract<GridItem, { kind: "promo" }> })
 export default function Home() {
   const [isUnlockModalOpen, setIsUnlockModalOpen] = useState(false);
   const [selectedTemplateTitle, setSelectedTemplateTitle] = useState<string | null>(null);
+  const language = useLanguage();
+  const t = getTranslation(language);
 
   const openUnlockModal = useCallback((title?: string) => {
     setSelectedTemplateTitle(title ?? null);
@@ -164,6 +170,11 @@ export default function Home() {
   const closeUnlockModal = useCallback(() => {
     setIsUnlockModalOpen(false);
   }, []);
+
+  // Prevent rendering until translations are loaded
+  if (!t || !t.hero) {
+    return null;
+  }
 
   return (
     <main className="min-h-screen bg-background">
@@ -178,6 +189,7 @@ export default function Home() {
               unoptimized
               width={160}
               style={{ objectFit: "contain" }}
+              priority
             />
             <span className="font-[var(--font-display)] text-sm sm:text-base md:text-lg text-foreground tracking-[0.08em] whitespace-nowrap hover:text-purple-300 transition-colors duration-300">
               Promptverse
@@ -247,6 +259,8 @@ export default function Home() {
             >
               {HOME_PAGE_DATA.primaryNavLink.text}
             </button>
+
+            <LanguageSwitcher />
           </div>
 
           <button aria-label="Mở menu" className="md:hidden p-2 text-foreground" type="button">
@@ -258,21 +272,21 @@ export default function Home() {
       <div className="max-w-[1200px] mx-auto px-6 sm:px-8 mt-6">
         <header className="flex flex-col items-center pt-12 sm:pt-16 pb-10">
           <p className="mb-2 text-muted-foreground text-sm font-medium">
-            Thiết kế bởi <span className="text-foreground">{BRAND_NAME}</span>
+            {t.hero.designedBy} <span className="text-foreground">{BRAND_NAME}</span>
           </p>
 
           <h1
             className="font-[var(--font-display)] text-[34px] sm:text-[56px] md:text-[68px] text-foreground text-center mb-4 font-extrabold leading-[1.12] sm:leading-[1.06] tracking-[0.015em]"
           >
             <span className="sm:hidden block">
-              <span className="block mb-0.5">Mở khóa sức mạnh</span>
-              <span className="block">thiết kế AI</span>
+              <span className="block mb-0.5">{t.hero.unlockPower}</span>
+              <span className="block">{t.hero.aiDesign}</span>
             </span>
             <span className="hidden sm:block">
-              Mở khóa sức mạnh
+              {t.hero.unlockPower}
             </span>
             <span className="hidden sm:block">
-              thiết kế AI{" "}
+              {t.hero.aiDesign}{" "}
               <span className="relative inline-block">
                 <span
                   className="animate-gradient-shift font-[var(--font-art)] italic font-normal tracking-[0.045em]"
@@ -285,7 +299,7 @@ export default function Home() {
                     textShadow: "0 0 24px rgba(255, 203, 155, 0.25)",
                   }}
                 >
-                  đột phá
+                  {t.hero.breakthrough}
                 </span>
               </span>
             </span>
@@ -301,13 +315,13 @@ export default function Home() {
                   textShadow: "0 0 24px rgba(255, 203, 155, 0.25)",
                 }}
               >
-                đột phá
+                {t.hero.breakthrough}
               </span>
             </span>
           </h1>
 
           <p className="text-muted-foreground font-medium text-center max-w-2xl mb-6 leading-relaxed text-[16px] tracking-[0.01em]">
-            Xây dựng landing page đẹp trong vài phút với bộ prompt có sẵn.<br></br> Copy, tùy chỉnh và triển khai ngay.
+            {t.hero.description}<br />{t.hero.descriptionLine2}
           </p>
 
           {isUnlimitedHref(HOME_PAGE_DATA.hero.ctaHref) ? (
@@ -344,9 +358,9 @@ export default function Home() {
         <footer className="border-t border-border py-8 mt-8 text-center text-sm text-muted-foreground">
           <p>{HOME_PAGE_DATA.footerText}</p>
         </footer>
-      </div>
+      </div >
 
       <UnlockContactModal isOpen={isUnlockModalOpen} onClose={closeUnlockModal} sourceTitle={selectedTemplateTitle} />
-    </main>
+    </main >
   );
 }

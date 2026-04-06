@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { Globe, Mail, MessageCircle, Phone, Sparkles, X } from "lucide-react";
+import { useLanguage } from "./language-switcher";
+import { getTranslation } from "@/lib/translations";
 
 type UnlockContactModalProps = {
   isOpen: boolean;
@@ -10,6 +12,9 @@ type UnlockContactModalProps = {
 };
 
 export default function UnlockContactModal({ isOpen, onClose, sourceTitle }: UnlockContactModalProps) {
+  const language = useLanguage();
+  const t = getTranslation(language);
+
   useEffect(() => {
     if (!isOpen) {
       return;
@@ -39,7 +44,7 @@ export default function UnlockContactModal({ isOpen, onClose, sourceTitle }: Unl
   return (
     <div className="fixed inset-0 z-[120] flex items-center justify-center px-4 py-6">
       <button
-        aria-label="Đóng popup liên hệ"
+        aria-label={t.modal.close}
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
         type="button"
@@ -53,16 +58,16 @@ export default function UnlockContactModal({ isOpen, onClose, sourceTitle }: Unl
             <div>
               <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-white/85">
                 <Sparkles className="h-3.5 w-3.5" />
-                Mở khóa prompt premium
+                {t.modal.badge}
               </span>
-              <h2 className="text-2xl font-bold text-white sm:text-3xl whitespace-nowrap">Liên hệ để mở khóa toàn bộ Promt</h2>
+              <h2 className="text-2xl font-bold text-white sm:text-3xl whitespace-nowrap">{t.modal.title}</h2>
               <p className="mt-2 text-sm text-white/70">
-                Mở khoá mẫu này và nhận thêm bộ prompt nâng cao cho Lovable, Google AI Studio, Stitch, Cursor, Copilot, Kiro...
+                {t.modal.description}
               </p>
             </div>
 
             <button
-              aria-label="Đóng"
+              aria-label={t.modal.close}
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition hover:bg-white/10 hover:text-white"
               onClick={onClose}
               type="button"
@@ -73,7 +78,7 @@ export default function UnlockContactModal({ isOpen, onClose, sourceTitle }: Unl
 
           {sourceTitle ? (
             <p className="mb-4 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white/90">
-              Mẫu bạn vừa bấm unlock: <span className="font-semibold">{sourceTitle}</span>
+              {t.modal.templateYouClicked} <span className="font-semibold">{sourceTitle}</span>
             </p>
           ) : null}
 
@@ -81,7 +86,7 @@ export default function UnlockContactModal({ isOpen, onClose, sourceTitle }: Unl
             <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
               <Phone className="h-4 w-4 shrink-0 text-white/70" />
               <div>
-                <p className="text-xs uppercase tracking-[0.08em] text-white/50">Liên hệ</p>
+                <p className="text-xs uppercase tracking-[0.08em] text-white/50">{t.modal.contact}</p>
                 <p className="font-semibold text-white">Trịnh Văn Hào</p>
               </div>
             </div>
