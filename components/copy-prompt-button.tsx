@@ -1,14 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Check, Copy as CopyIconLucide } from "lucide-react";
+import { Check, Copy as CopyIconLucide, Lock } from "lucide-react";
 
 type CopyPromptButtonProps = {
   title: string;
   className: string;
 };
 
-type CopyStatus = "idle" | "copying" | "copied" | "missing" | "error";
+type CopyStatus = "idle" | "copying" | "copied" | "locked" | "missing" | "error";
 
 // No longer needed, using lucide-react icons
 
@@ -65,6 +65,12 @@ export default function CopyPromptButton({ title, className }: CopyPromptButtonP
         return;
       }
 
+      if (response.status === 403) {
+        setStatus("locked");
+        scheduleReset();
+        return;
+      }
+
       if (!response.ok) {
         throw new Error("Failed to fetch prompt");
       }
@@ -100,6 +106,8 @@ export default function CopyPromptButton({ title, className }: CopyPromptButtonP
       ? "Loading..."
       : status === "copied"
         ? "Copied"
+        : status === "locked"
+          ? "Locked"
         : status === "missing"
           ? "Missing prompt"
           : status === "error"
@@ -116,6 +124,8 @@ export default function CopyPromptButton({ title, className }: CopyPromptButtonP
     >
       {status === "copied" ? (
         <Check className="w-4 h-4 mr-1 text-green-600 inline" />
+      ) : status === "locked" ? (
+        <Lock className="w-4 h-4 mr-1 inline" />
       ) : (
         <CopyIconLucide className="w-4 h-4 mr-1 inline" />
       )}

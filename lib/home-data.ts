@@ -64,8 +64,8 @@ export const HOME_PAGE_DATA: HomePageData = {
       "isNew": true
     },
     {
-      "text": "Hướng dẫn",
-      "href": "/pages/guide/index.html",
+      "text": "Instructions",
+      "href": "/instructions",
       "isNew": false
     },
     {
@@ -93,7 +93,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Landing Page",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "premium",
+      "action": "copy",
       "boltHref": "",
       "media": [
         {
@@ -181,7 +181,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "premium",
+      "action": "copy",
       "boltHref": "",
       "media": [
         {
@@ -197,7 +197,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Landing Page",
       "rowSpan2": true,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -229,7 +229,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "premium",
+      "action": "copy",
       "boltHref": "",
       "media": [
         {
@@ -245,7 +245,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Landing Page",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "https://bolt.new/~/sb1-oszmzx67",
       "media": [
         {
@@ -309,7 +309,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Portfolio",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -325,7 +325,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Landing Page",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -357,7 +357,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -373,7 +373,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -389,7 +389,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -405,7 +405,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -453,7 +453,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -549,7 +549,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Creative",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -581,7 +581,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Agency",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -597,7 +597,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Web3",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -613,7 +613,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -740,7 +740,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -761,7 +761,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Landing Page",
       "rowSpan2": true,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -782,7 +782,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -824,7 +824,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -866,7 +866,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Agency",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -908,7 +908,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Hero Section",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -929,7 +929,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Animation",
       "rowSpan2": false,
       "hasLoader": true,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -966,7 +966,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Agency",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -987,7 +987,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -1029,7 +1029,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "Automotive",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -1071,7 +1071,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "AI / SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -1113,7 +1113,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -1171,7 +1171,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {
@@ -1192,7 +1192,7 @@ export const HOME_PAGE_DATA: HomePageData = {
       "category": "SaaS",
       "rowSpan2": false,
       "hasLoader": false,
-      "action": "copy",
+      "action": "premium",
       "boltHref": "",
       "media": [
         {

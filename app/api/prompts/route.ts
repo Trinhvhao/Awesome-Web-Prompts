@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { isPromptUnlockedByTitle } from "@/lib/prompt-access";
 import { getPromptByTitle } from "@/lib/prompt-store";
 
 export async function GET(request: NextRequest) {
@@ -7,6 +8,10 @@ export async function GET(request: NextRequest) {
 
   if (!title) {
     return NextResponse.json({ error: "Missing title query parameter" }, { status: 400 });
+  }
+
+  if (!isPromptUnlockedByTitle(title)) {
+    return NextResponse.json({ error: "Prompt is premium and requires unlock" }, { status: 403 });
   }
 
   try {

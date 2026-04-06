@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { Lock, Sparkles } from "lucide-react";
+import { useCallback, useState, type ReactNode } from "react";
 
 import { HOME_PAGE_DATA, type GridItem, type TemplateCard } from "@/lib/home-data";
+import UnlockContactModal from "@/components/unlock-contact-modal";
 import CopyPromptButton from "../components/copy-prompt-button";
 
 const BRAND_NAME = "Trịnh Văn Hào";
@@ -27,6 +31,11 @@ function NavHref({ href, className, children }: { href: string; className: strin
     </Link>
   );
 }
+
+function isUnlimitedHref(href: string): boolean {
+  return href.includes("/pages/pricing");
+}
+
 function MenuIcon() {
   return (
     <svg
@@ -48,7 +57,7 @@ function MenuIcon() {
   );
 }
 
-function TemplateCardView({ item }: { item: TemplateCard }) {
+function TemplateCardView({ item, onUnlock }: { item: TemplateCard; onUnlock: (title: string) => void }) {
   const shouldPrioritizeMedia = item.hasLoader && item.media.length === 1;
 
   return (
@@ -81,10 +90,21 @@ function TemplateCardView({ item }: { item: TemplateCard }) {
           <span className="text-muted-foreground text-sm">{item.category}</span>
         </div>
 
-        <CopyPromptButton
-          className="flex items-center gap-1.5 bg-secondary hover:bg-accent text-muted-foreground hover:text-foreground px-3 py-2 rounded-xl text-sm font-medium transition-colors disabled:opacity-50"
-          title={item.title}
-        />
+        {item.action === "copy" ? (
+          <CopyPromptButton
+            className="flex items-center gap-1.5 bg-secondary hover:bg-accent text-muted-foreground hover:text-foreground px-3 py-2 rounded-xl text-sm font-medium transition-colors disabled:opacity-50"
+            title={item.title}
+          />
+        ) : (
+          <button
+            className="inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white/90 transition hover:border-white/30 hover:bg-white/15"
+            onClick={() => onUnlock(item.title)}
+            type="button"
+          >
+            <Lock className="h-4 w-4" />
+            Unlock
+          </button>
+        )}
       </div>
     </article>
   );
@@ -109,14 +129,14 @@ function PromoCardView({ item }: { item: Extract<GridItem, { kind: "promo" }> })
 
       <div className="w-full h-full flex flex-col justify-between z-10">
         <div className="flex justify-center items-center h-[160px] mb-6 overflow-hidden">
-          <Image 
-            alt={BRAND_NAME} 
-            className="w-auto h-full max-h-[140px] scale-[1.55] md:scale-[1.7] opacity-95 drop-shadow-2xl group-hover:scale-[1.9] group-hover:rotate-1 transition-transform duration-700 ease-out" 
-            src={BRAND_LOGO_SRC} 
-            unoptimized 
-            width={220} 
+          <Image
+            alt={BRAND_NAME}
+            className="w-auto h-full max-h-[140px] scale-[1.55] md:scale-[1.7] opacity-95 drop-shadow-2xl group-hover:scale-[1.9] group-hover:rotate-1 transition-transform duration-700 ease-out"
+            src={BRAND_LOGO_SRC}
+            unoptimized
+            width={220}
             height={220}
-            style={{ objectFit: "contain", width: "auto" }}
+            style={{ objectFit: "contain" }}
           />
         </div>
 
@@ -133,6 +153,18 @@ function PromoCardView({ item }: { item: Extract<GridItem, { kind: "promo" }> })
 }
 
 export default function Home() {
+  const [isUnlockModalOpen, setIsUnlockModalOpen] = useState(false);
+  const [selectedTemplateTitle, setSelectedTemplateTitle] = useState<string | null>(null);
+
+  const openUnlockModal = useCallback((title?: string) => {
+    setSelectedTemplateTitle(title ?? null);
+    setIsUnlockModalOpen(true);
+  }, []);
+
+  const closeUnlockModal = useCallback(() => {
+    setIsUnlockModalOpen(false);
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <nav className="sticky top-0 z-50 w-full bg-background/70 backdrop-blur-xl border-b border-white/5 transition-all duration-500 hover:bg-background/90">
@@ -145,7 +177,7 @@ export default function Home() {
               src={BRAND_LOGO_SRC}
               unoptimized
               width={160}
-              style={{ objectFit: "contain", width: "auto" }}
+              style={{ objectFit: "contain" }}
             />
             <span className="font-[var(--font-display)] text-sm sm:text-base md:text-lg text-foreground tracking-[0.08em] whitespace-nowrap hover:text-purple-300 transition-colors duration-300">
               Promptverse
@@ -155,6 +187,19 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-1 sm:gap-2">
             {HOME_PAGE_DATA.menuLinks.map((menuLink) => {
               const label = menuLink.isNew ? menuLink.text.replace(/\s+New$/, "") : menuLink.text;
+
+              if (isUnlimitedHref(menuLink.href)) {
+                return (
+                  <button
+                    className="px-3 sm:px-4 py-2 text-muted-foreground text-sm font-medium rounded-lg hover:text-foreground hover:bg-white/5 transition-all duration-300 flex items-center group"
+                    key={menuLink.href}
+                    onClick={() => openUnlockModal(menuLink.text)}
+                    type="button"
+                  >
+                    <span className="relative group-hover:-translate-y-0.5 transition-transform duration-300 inline-block">{label}</span>
+                  </button>
+                );
+              }
 
               return (
                 <NavHref
@@ -195,12 +240,13 @@ export default function Home() {
               );
             })}
 
-            <NavHref
+            <button
               className="px-5 py-2 bg-foreground text-background text-sm font-medium rounded-lg hover:opacity-90 hover:scale-105 hover:bg-neutral-200 transition-all duration-300 ml-2"
-              href={HOME_PAGE_DATA.primaryNavLink.href}
+              onClick={() => openUnlockModal(HOME_PAGE_DATA.primaryNavLink.text)}
+              type="button"
             >
               {HOME_PAGE_DATA.primaryNavLink.text}
-            </NavHref>
+            </button>
           </div>
 
           <button aria-label="Mở menu" className="md:hidden p-2 text-foreground" type="button">
@@ -264,18 +310,29 @@ export default function Home() {
             Xây dựng landing page đẹp trong vài phút với bộ prompt có sẵn.<br></br> Copy, tùy chỉnh và triển khai ngay.
           </p>
 
-          <NavHref
-            className="flex items-center justify-center gap-1 px-8 py-2 h-14 text-lg font-semibold rounded-full border-t-2 border-white cursor-pointer hover:opacity-90 transition-opacity mb-6"
-            href={HOME_PAGE_DATA.hero.ctaHref}
-          >
-            {HOME_PAGE_DATA.hero.ctaText}
-          </NavHref>
+          {isUnlimitedHref(HOME_PAGE_DATA.hero.ctaHref) ? (
+            <button
+              className="flex items-center justify-center gap-1 px-8 py-2 h-14 text-lg font-semibold rounded-full border-t-2 border-white cursor-pointer hover:opacity-90 transition-opacity mb-6"
+              onClick={() => openUnlockModal(HOME_PAGE_DATA.hero.ctaText)}
+              type="button"
+            >
+              <Sparkles className="h-4 w-4" />
+              {HOME_PAGE_DATA.hero.ctaText}
+            </button>
+          ) : (
+            <NavHref
+              className="flex items-center justify-center gap-1 px-8 py-2 h-14 text-lg font-semibold rounded-full border-t-2 border-white cursor-pointer hover:opacity-90 transition-opacity mb-6"
+              href={HOME_PAGE_DATA.hero.ctaHref}
+            >
+              {HOME_PAGE_DATA.hero.ctaText}
+            </NavHref>
+          )}
         </header>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pb-6" style={{ gridAutoRows: "auto" }}>
           {HOME_PAGE_DATA.gridItems.map((item, index) =>
             item.kind === "template" ? (
-              <TemplateCardView item={item} key={`${item.title}-${index}`} />
+              <TemplateCardView item={item} key={`${item.title}-${index}`} onUnlock={openUnlockModal} />
             ) : (
               <PromoCardView item={item} key={`promo-${index}`} />
             ),
@@ -288,6 +345,8 @@ export default function Home() {
           <p>{HOME_PAGE_DATA.footerText}</p>
         </footer>
       </div>
+
+      <UnlockContactModal isOpen={isUnlockModalOpen} onClose={closeUnlockModal} sourceTitle={selectedTemplateTitle} />
     </main>
   );
 }
