@@ -59,11 +59,6 @@ export const HOME_PAGE_DATA: HomePageData = {
   "logoLink": "/",
   "menuLinks": [
     {
-      "text": "Nền động Mới",
-      "href": "/pages/backgrounds/index.html",
-      "isNew": true
-    },
-    {
       "text": "Hướng dẫn",
       "href": "/instructions",
       "isNew": false
@@ -97,9 +92,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-space-voyage-preview-eECLH3Yc.gif",
+          "src": "/assets/images/assets/hero-space-voyage-poster-Dti9x8oS.png",
           "alt": "Space Voyage",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-space-voyage-preview-eECLH3Yc.gif",
+          "alt": "Space Voyage",
+          "isPreview": true
         }
       ]
     },
@@ -113,9 +113,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-orbis-nft-preview-C3wvh77a.gif",
+          "src": "/assets/images/assets/hero-orbis-nft-poster-Bfg-lWHl.png",
           "alt": "Orbis NFT",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-orbis-nft-preview-C3wvh77a.gif",
+          "alt": "Orbis NFT",
+          "isPreview": true
         }
       ]
     },
@@ -137,9 +142,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-neovision-preview-qwRNOas1.gif",
+          "src": "/assets/images/assets/hero-neovision-poster-CIjls94N.png",
           "alt": "NeoVision",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-neovision-preview-qwRNOas1.gif",
+          "alt": "NeoVision",
+          "isPreview": true
         }
       ]
     },
@@ -153,9 +163,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-velorah-preview-CJNTtbpd.gif",
+          "src": "/assets/images/assets/hero-velorah-poster-mLkXfzr9.png",
           "alt": "Velorah",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-velorah-preview-CJNTtbpd.gif",
+          "alt": "Velorah",
+          "isPreview": true
         }
       ]
     },
@@ -169,9 +184,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-grow-ai-preview-BlQ8tAQ-.gif",
+          "src": "/assets/images/assets/hero-grow-ai-poster-B-kSCKSN.png",
           "alt": "Grow AI Talent Platform",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-grow-ai-preview-BlQ8tAQ-.gif",
+          "alt": "Grow AI Talent Platform",
+          "isPreview": true
         }
       ]
     },
@@ -185,9 +205,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif",
+          "src": "/assets/images/assets/hero-stellar-ai-v2-poster-D2407pz-.png",
           "alt": "Sync AI",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif",
+          "alt": "Sync AI",
+          "isPreview": true
         }
       ]
     },
@@ -201,9 +226,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-mindloop-landing-preview-Bqnstohr.gif",
+          "src": "/assets/images/assets/hero-mindloop-landing-poster-BbPiPxcA.png",
           "alt": "Mindloop Landing",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-mindloop-landing-preview-Bqnstohr.gif",
+          "alt": "Mindloop Landing",
+          "isPreview": true
         }
       ]
     },
@@ -217,9 +247,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-asme-preview-B_nGDnTP.gif",
+          "src": "/assets/images/assets/hero-asme-poster-G7m9uLxL.png",
           "alt": "Asme",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-asme-preview-B_nGDnTP.gif",
+          "alt": "Asme",
+          "isPreview": true
         }
       ]
     },
@@ -233,9 +268,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-transform-data-preview-Cx5OU29N.gif",
+          "src": "/assets/images/assets/hero-transform-data-poster-DfsHSPMo.png",
           "alt": "Transform Data",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-transform-data-preview-Cx5OU29N.gif",
+          "alt": "Transform Data",
+          "isPreview": true
         }
       ]
     },
@@ -249,9 +289,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "https://bolt.new/~/sb1-oszmzx67",
       "media": [
         {
-          "src": "/assets/images/assets/hero-vortex-studio-preview-BQyvwopD.gif",
+          "src": "/assets/images/assets/hero-vortex-studio-poster-lf3IYvUr.png",
           "alt": "AI Designer Portfolio",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-vortex-studio-preview-BQyvwopD.gif",
+          "alt": "AI Designer Portfolio",
+          "isPreview": true
         }
       ]
     },
@@ -265,9 +310,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-terra-preview-BFjrCr7T.gif",
+          "src": "/assets/images/assets/hero-terra-poster-BN-oVgFr.png",
           "alt": "Terra Geo Map",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-terra-preview-BFjrCr7T.gif",
+          "alt": "Terra Geo Map",
+          "isPreview": true
         }
       ]
     },
@@ -281,9 +331,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-ai-designer-agency-preview-vrAje6Od.gif",
+          "src": "/assets/images/assets/hero-ai-designer-agency-poster-CQqRSMUo.png",
           "alt": "AI Designer Agency",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-ai-designer-agency-preview-vrAje6Od.gif",
+          "alt": "AI Designer Agency",
+          "isPreview": true
         }
       ]
     },
@@ -297,9 +352,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-automation-machines-preview-DlTveRIN.gif",
+          "src": "/assets/images/assets/hero-automation-machines-poster-CRJvUPpQ.png",
           "alt": "Automation Machines",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-automation-machines-preview-DlTveRIN.gif",
+          "alt": "Automation Machines",
+          "isPreview": true
         }
       ]
     },
@@ -313,9 +373,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-portfolio-cosmic-preview-BpvWJ3Nc.gif",
+          "src": "/assets/images/assets/hero-portfolio-cosmic-poster-vGZ7GZt-.png",
           "alt": "Portfolio Cosmic",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-portfolio-cosmic-preview-BpvWJ3Nc.gif",
+          "alt": "Portfolio Cosmic",
+          "isPreview": true
         }
       ]
     },
@@ -329,9 +394,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-skyelite-preview-DHaZIgUv.gif",
+          "src": "/assets/images/assets/hero-skyelite-poster-GHD3VPq4.png",
           "alt": "SkyElite Private Jets",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-skyelite-preview-DHaZIgUv.gif",
+          "alt": "SkyElite Private Jets",
+          "isPreview": true
         }
       ]
     },
@@ -345,9 +415,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-xportfolio-preview-D4A8maiC.gif",
+          "src": "/assets/images/assets/hero-xportfolio-poster-B6q-pIN8.png",
           "alt": "xPortfolio Hero",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-xportfolio-preview-D4A8maiC.gif",
+          "alt": "xPortfolio Hero",
+          "isPreview": true
         }
       ]
     },
@@ -361,9 +436,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-designpro-preview-D8c5_een.gif",
+          "src": "/assets/images/assets/hero-designpro-poster-DwA5o1A7.png",
           "alt": "DesignPro Academy",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-designpro-preview-D8c5_een.gif",
+          "alt": "DesignPro Academy",
+          "isPreview": true
         }
       ]
     },
@@ -377,9 +457,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-stellar-ai-preview-D3HL6bw1.gif",
+          "src": "/assets/images/assets/hero-stellar-ai-poster-BQJztWy-.png",
           "alt": "Stellar AI",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-stellar-ai-preview-D3HL6bw1.gif",
+          "alt": "Stellar AI",
+          "isPreview": true
         }
       ]
     },
@@ -393,9 +478,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-power-ai-preview-BqpSbx41.gif",
+          "src": "/assets/images/assets/hero-power-ai-poster-B5SetZ6G.png",
           "alt": "Power AI",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-power-ai-preview-BqpSbx41.gif",
+          "alt": "Power AI",
+          "isPreview": true
         }
       ]
     },
@@ -409,9 +499,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-aethera-preview-DknSlcTa.gif",
+          "src": "/assets/images/assets/hero-aethera-poster-DB6AdF0M.png",
           "alt": "Aethera Studio",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-aethera-preview-DknSlcTa.gif",
+          "alt": "Aethera Studio",
+          "isPreview": true
         }
       ]
     },
@@ -425,9 +520,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-nova-space-preview-ej0OOJ0M.gif",
+          "src": "/assets/images/assets/hero-nova-space-poster-BNMHPfK2.png",
           "alt": "NOVA Space Systems",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-nova-space-preview-ej0OOJ0M.gif",
+          "alt": "NOVA Space Systems",
+          "isPreview": true
         }
       ]
     },
@@ -441,9 +541,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-orbit-web3-preview-BXt4OttD.gif",
+          "src": "/assets/images/assets/hero-orbit-web3-poster-CsiRb_pp.png",
           "alt": "Orbit Web3",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-orbit-web3-preview-BXt4OttD.gif",
+          "alt": "Orbit Web3",
+          "isPreview": true
         }
       ]
     },
@@ -457,9 +562,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-nexora-preview-cx5HmUgo.gif",
+          "src": "/assets/images/assets/hero-nexora-poster-CLY3ybj2.png",
           "alt": "Nexora Automation",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-nexora-preview-cx5HmUgo.gif",
+          "alt": "Nexora Automation",
+          "isPreview": true
         }
       ]
     },
@@ -473,9 +583,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-nexus-preview-74RfhYpA.gif",
+          "src": "/assets/images/assets/hero-nexus-poster-fNblRje9.png",
           "alt": "Nexus IT Solutions",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-nexus-preview-74RfhYpA.gif",
+          "alt": "Nexus IT Solutions",
+          "isPreview": true
         }
       ]
     },
@@ -489,9 +604,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-evr-ventures-preview-DZxeVFEX.gif",
+          "src": "/assets/images/assets/hero-evr-ventures-poster-Bld4o1cl.png",
           "alt": "EVR Ventures",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-evr-ventures-preview-DZxeVFEX.gif",
+          "alt": "EVR Ventures",
+          "isPreview": true
         }
       ]
     },
@@ -505,9 +625,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-planet-orbit-preview-DWAP8Z1P.gif",
+          "src": "/assets/images/assets/hero-planet-orbit-poster-CuWG70ga.png",
           "alt": "Planet Orbit",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-planet-orbit-preview-DWAP8Z1P.gif",
+          "alt": "Planet Orbit",
+          "isPreview": true
         }
       ]
     },
@@ -521,9 +646,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-ecommerce-website-preview-D7j_TrNR.gif",
+          "src": "/assets/images/assets/hero-ecommerce-website-poster-DUcLYbYg.png",
           "alt": "E-commerce Website",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-ecommerce-website-preview-D7j_TrNR.gif",
+          "alt": "E-commerce Website",
+          "isPreview": true
         }
       ]
     },
@@ -537,9 +667,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-akor-security-preview-hRrwsPNf.gif",
+          "src": "/assets/images/assets/hero-akor-security-poster-Cw0Ko1yz.png",
           "alt": "AKOR Security",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-akor-security-preview-hRrwsPNf.gif",
+          "alt": "AKOR Security",
+          "isPreview": true
         }
       ]
     },
@@ -553,9 +688,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-new-era-preview-CocuDUm9.gif",
+          "src": "/assets/images/assets/hero-new-era-poster-BIdtLrty.png",
           "alt": "New Era Bold Hero",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-new-era-preview-CocuDUm9.gif",
+          "alt": "New Era Bold Hero",
+          "isPreview": true
         }
       ]
     },
@@ -569,9 +709,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-wealth-preview-B70idl_u.gif",
+          "src": "/assets/images/assets/hero-wealth-poster-D9mwBQ1R.png",
           "alt": "Wealth Video Hero",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-wealth-preview-B70idl_u.gif",
+          "alt": "Wealth Video Hero",
+          "isPreview": true
         }
       ]
     },
@@ -585,9 +730,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-glassmorphism-agency-preview-CGqeRoqP.gif",
+          "src": "/assets/images/assets/hero-glassmorphism-agency-poster-BEMcgqRb.png",
           "alt": "Glassmorphism Agency Hero",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-glassmorphism-agency-preview-CGqeRoqP.gif",
+          "alt": "Glassmorphism Agency Hero",
+          "isPreview": true
         }
       ]
     },
@@ -617,9 +767,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-hr-saas-preview-Cf365Y1O.gif",
+          "src": "/assets/images/assets/hero-hr-saas-poster-Bj2hU3_c.png",
           "alt": "HR SaaS Hero",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-hr-saas-preview-Cf365Y1O.gif",
+          "alt": "HR SaaS Hero",
+          "isPreview": true
         }
       ]
     },
@@ -633,9 +788,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-bionova-preview-Sk76d0_D.gif",
+          "src": "/assets/images/assets/hero-bionova-poster-CPaKbq55.png",
           "alt": "Bionova Biotech",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-bionova-preview-Sk76d0_D.gif",
+          "alt": "Bionova Biotech",
+          "isPreview": true
         }
       ]
     },
@@ -649,9 +809,14 @@ export const HOME_PAGE_DATA: HomePageData = {
       "boltHref": "",
       "media": [
         {
-          "src": "/assets/images/assets/hero-clubx-preview-CpKCe8yV.gif",
+          "src": "/assets/images/assets/hero-clubx-poster-Dwv_zKz1.png",
           "alt": "ClubX Investors",
           "isPreview": false
+        },
+        {
+          "src": "/assets/images/assets/hero-clubx-preview-CpKCe8yV.gif",
+          "alt": "ClubX Investors",
+          "isPreview": true
         }
       ]
     },

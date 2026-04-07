@@ -4,12 +4,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { Lock, Sparkles } from "lucide-react";
 import { useCallback, useState, type ReactNode } from "react";
+import dynamic from 'next/dynamic';
 
 import { HOME_PAGE_DATA, type GridItem, type TemplateCard } from "@/lib/home-data";
-import UnlockContactModal from "@/components/unlock-contact-modal";
 import CopyPromptButton from "../components/copy-prompt-button";
 import { LanguageSwitcher, useLanguage } from "@/components/language-switcher";
 import { getTranslation } from "@/lib/translations";
+
+// Lazy load modal - chỉ load khi cần
+const UnlockContactModal = dynamic(
+  () => import('@/components/unlock-contact-modal'),
+  {
+    ssr: false,
+    loading: () => null
+  }
+);
 
 const BRAND_NAME = "Trịnh Văn Hào";
 const BRAND_LOGO_SRC = "/assets/images/assets/tvh.png";
@@ -59,10 +68,17 @@ function MenuIcon() {
   );
 }
 
-function TemplateCardView({ item, onUnlock }: { item: TemplateCard; onUnlock: (title: string) => void }) {
+function TemplateCardView({ item, onUnlock, index }: { item: TemplateCard; onUnlock: (title: string) => void; index: number }) {
   const language = useLanguage();
   const t = getTranslation(language);
-  const shouldPrioritizeMedia = item.hasLoader && item.media.length === 1;
+  const [gifLoaded, setGifLoaded] = useState(false);
+
+  // Priority cho 4 templates đầu tiên
+  const isPriority = index < 4;
+
+  // Tách PNG poster và GIF preview
+  const posterImage = item.media.find(m => !m.isPreview); // PNG
+  const previewGif = item.media.find(m => m.isPreview);   // GIF
 
   return (
     <article
@@ -71,21 +87,59 @@ function TemplateCardView({ item, onUnlock }: { item: TemplateCard; onUnlock: (t
       <div
         className={`relative w-full rounded-xl overflow-hidden mb-3 ${item.rowSpan2 ? "aspect-[3/4] md:aspect-auto md:flex-1 md:min-h-0" : "aspect-[4/3]"}`}
       >
-        {item.hasLoader ? <div className="absolute inset-0 bg-secondary animate-pulse" /> : null}
-        {item.media.map((media) => (
+        {/* Skeleton loader */}
+        {!posterImage && item.hasLoader && (
+          <div className="absolute inset-0 bg-secondary animate-pulse" />
+        )}
+
+        {/* PNG Poster - Load ngay, luôn hiển thị */}
+        {posterImage && (
           <Image
-            alt={media.alt}
+            alt={posterImage.alt}
             className="absolute inset-0 w-full h-full object-cover object-top"
             decoding="async"
             fill
-            fetchPriority={shouldPrioritizeMedia ? "high" : media.isPreview ? "low" : "auto"}
-            key={`${item.title}-${media.src}`}
-            loading={shouldPrioritizeMedia ? "eager" : "lazy"}
+            loading={isPriority ? "eager" : "lazy"}
+            priority={isPriority}
+            quality={85}
             sizes={item.rowSpan2 ? "(max-width: 1024px) 50vw, 25vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
-            src={media.src}
+            src={posterImage.src}
             unoptimized
           />
-        ))}
+        )}
+
+        {/* GIF Preview - Load sau, fade in khi ready */}
+        {previewGif && (
+          <Image
+            alt={previewGif.alt}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700 ${gifLoaded ? 'opacity-100' : 'opacity-0'}`}
+            decoding="async"
+            fill
+            fetchPriority="low"
+            loading="lazy"
+            onLoad={() => setGifLoaded(true)}
+            quality={75}
+            sizes={item.rowSpan2 ? "(max-width: 1024px) 50vw, 25vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
+            src={previewGif.src}
+            unoptimized
+          />
+        )}
+
+        {/* Nếu chỉ có 1 media (GIF only) */}
+        {item.media.length === 1 && !posterImage && (
+          <Image
+            alt={item.media[0].alt}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 ${gifLoaded ? 'opacity-100' : 'opacity-0'}`}
+            decoding="async"
+            fill
+            loading="lazy"
+            onLoad={() => setGifLoaded(true)}
+            quality={75}
+            sizes={item.rowSpan2 ? "(max-width: 1024px) 50vw, 25vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
+            src={item.media[0].src}
+            unoptimized
+          />
+        )}
       </div>
 
       <div className="flex items-center justify-between gap-3 px-4 py-3">
@@ -159,6 +213,7 @@ function PromoCardView({ item }: { item: Extract<GridItem, { kind: "promo" }> })
 export default function Home() {
   const [isUnlockModalOpen, setIsUnlockModalOpen] = useState(false);
   const [selectedTemplateTitle, setSelectedTemplateTitle] = useState<string | null>(null);
+  const [visibleItems, setVisibleItems] = useState(12); // Chỉ hiển thị 12 items đầu tiên
   const language = useLanguage();
   const t = getTranslation(language);
 
@@ -169,6 +224,10 @@ export default function Home() {
 
   const closeUnlockModal = useCallback(() => {
     setIsUnlockModalOpen(false);
+  }, []);
+
+  const loadMore = useCallback(() => {
+    setVisibleItems(prev => Math.min(prev + 12, HOME_PAGE_DATA.gridItems.length));
   }, []);
 
   // Prevent rendering until translations are loaded
@@ -352,14 +411,26 @@ export default function Home() {
         </header>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pb-6" style={{ gridAutoRows: "auto" }}>
-          {HOME_PAGE_DATA.gridItems.map((item, index) =>
+          {HOME_PAGE_DATA.gridItems.slice(0, visibleItems).map((item, index) =>
             item.kind === "template" ? (
-              <TemplateCardView item={item} key={`${item.title}-${index}`} onUnlock={openUnlockModal} />
+              <TemplateCardView item={item} index={index} key={`${item.title}-${index}`} onUnlock={openUnlockModal} />
             ) : (
               <PromoCardView item={item} key={`promo-${index}`} />
             ),
           )}
         </section>
+
+        {visibleItems < HOME_PAGE_DATA.gridItems.length && (
+          <div className="flex justify-center pb-12">
+            <button
+              onClick={loadMore}
+              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-orange-400 hover:from-purple-400 hover:to-orange-300 text-white font-semibold rounded-xl shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105"
+              type="button"
+            >
+              Xem thêm {Math.min(12, HOME_PAGE_DATA.gridItems.length - visibleItems)} mẫu →
+            </button>
+          </div>
+        )}
 
 
 
