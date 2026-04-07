@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Instrument_Serif, Inter, Sora } from "next/font/google";
 import "./globals.css";
 import StructuredData from "./structured-data";
+import HeadMeta from "./head-meta";
 
 
 const interSans = Inter({
@@ -77,6 +78,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://awesome-web-prompts.vercel.app/og-image.png",
+        secureUrl: "https://awesome-web-prompts.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Promptverse - AI Design Prompts Library",
@@ -137,6 +139,7 @@ export default function RootLayout({
     >
       <head>
         <StructuredData />
+        <HeadMeta />
       </head>
       <body
         className={`${interSans.variable} ${geistMono.variable} ${soraDisplay.variable} ${instrumentSerifArt.variable} antialiased bg-background text-foreground`}
