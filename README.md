@@ -1,75 +1,43 @@
-# 🚀 Promptverse - AI Design Prompt Library
+# 🚀 Promptverse - Thư Viện Prompt Thiết Kế AI
 
 <div align="center">
 
-![Promptverse Banner](public/assets/images/assets/tvh.png)
+![Promptverse Banner](public/og-image.png)
 
-**Mở khóa sức mạnh thiết kế AI đột phá**
+### **Xây dựng Landing Page đẹp trong vài phút**
 
-Xây dựng landing page đẹp trong vài phút với bộ prompt có sẵn. Copy, tùy chỉnh và triển khai ngay.
+Bộ sưu tập 60+ prompt thiết kế chuyên nghiệp cho v0, Bolt, Cursor, Claude và nhiều AI tools khác.  
+Copy, paste và tạo website đẹp ngay lập tức.
 
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/trinhhao142.hayyier/)
+[![Zalo](https://img.shields.io/badge/Zalo-0068FF?style=for-the-badge&logo=zalo&logoColor=white)](https://zalo.me/0777228660)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:haotrinh142@gmail.com)
 
-[🌐 Live Demo](#) • [📖 Documentation](#features) • [💬 Contact](#contact)
+[🌐 Truy cập ngay](https://promptverse.com) • [📱 Liên hệ Zalo](https://zalo.me/0777228660) • [💬 Facebook](https://www.facebook.com/trinhhao142.hayyier/)
 
 </div>
 
 ---
 
-## ✨ Features
+## ✨ Tại sao chọn Promptverse?
 
-### 🎨 **60+ Premium Design Templates**
-Bộ sưu tập prompt được thiết kế chuyên nghiệp cho mọi nhu cầu:
-- Landing Pages
-- Hero Sections
-- SaaS Platforms
-- Portfolio Sites
-- Agency Websites
-- E-commerce
-- Web3 & NFT
-- AI & Tech
+### 🎯 **Đơn giản & Nhanh chóng**
+Không cần code, không cần thiết kế. Chỉ cần copy prompt và paste vào AI tool yêu thích. Website của bạn sẽ sẵn sàng trong vài phút.
 
-### 🤖 **Compatible with 16+ AI Tools**
-Prompts hoạt động seamlessly với:
+### 🎨 **60+ Mẫu Thiết Kế Chuyên Nghiệp**
+Từ Landing Page, SaaS Platform, Portfolio đến Agency Website. Mọi nhu cầu thiết kế đều có sẵn.
 
-<div align="center">
+### 🤖 **Tương thích 16+ AI Tools**
+Hoạt động hoàn hảo với v0.dev, Bolt.new, Cursor, Claude, ChatGPT, Gemini và nhiều công cụ khác.
 
-| Tool | Description |
-|------|-------------|
-| 🔷 **v0.dev** | Generate UI components instantly |
-| ⚡ **Bolt.new** | Full-stack apps with live preview |
-| 💖 **Lovable** | Complete landing pages with animations |
-| 💻 **Cursor** | AI-powered IDE coding |
-| 🌊 **Windsurf** | Advanced code generation |
-| 🤖 **Claude** | Production-ready code |
-| 🧠 **ChatGPT** | Versatile AI assistant |
-| ✨ **Gemini** | Google's powerful AI |
-| 💡 **AI Studio** | System instruction optimization |
-| 📦 **Replit** | Instant deployment |
-| ⚡ **Vercel** | Edge deployment |
-| 🎨 **Framer** | Design to code |
-| 🌐 **Webflow** | Visual development |
-| 🪄 **Dora AI** | No-code AI builder |
-| 🔮 **Galileo** | AI design system |
-| 🚀 **Uizard** | Rapid prototyping |
-
-</div>
-
-### 🎯 **Key Benefits**
-- ✅ **Copy & Paste Ready** - No modifications needed
-- ✅ **Production Quality** - Professional, tested designs
-- ✅ **Responsive** - Mobile-first approach
-- ✅ **Modern Stack** - Latest web technologies
-- ✅ **Fast Setup** - Deploy in minutes
-- ✅ **Customizable** - Easy to adapt to your brand
+### ⚡ **Sẵn sàng Production**
+Mọi prompt đều được test kỹ lưỡng, responsive, và tối ưu cho mọi thiết bị.
 
 ---
 
-## 🖼️ Template Showcase
+## 🖼️ Thư Viện Mẫu Thiết Kế
 
-### 🌟 Featured Templates
+### 🌟 Landing Pages & Hero Sections
 
 <table>
   <tr>
@@ -78,307 +46,358 @@ Prompts hoạt động seamlessly với:
       <br/>
       <b>Space Voyage</b>
       <br/>
-      <i>Modern space-themed landing page</i>
-    </td>
-    <td width="33%" align="center">
-      <img src="public/assets/images/assets/hero-velorah-poster-mLkXfzr9.png" alt="Velorah" width="100%"/>
-      <br/>
-      <b>Velorah - Agency</b>
-      <br/>
-      <i>Elegant agency website</i>
-    </td>
-    <td width="33%" align="center">
-      <img src="public/assets/images/assets/hero-grow-ai-poster-B-kSCKSN.png" alt="Grow AI" width="100%"/>
-      <br/>
-      <b>Grow AI - SaaS Platform</b>
-      <br/>
-      <i>AI-powered talent platform</i>
-    </td>
-  </tr>
-  <tr>
-    <td width="33%" align="center">
-      <img src="public/assets/images/assets/hero-stellar-ai-poster-BQJztWy-.png" alt="Stellar AI" width="100%"/>
-      <br/>
-      <b>Stellar AI</b>
-      <br/>
-      <i>Dynamic hero with gradients</i>
-    </td>
-    <td width="33%" align="center">
-      <img src="public/assets/images/assets/hero-transform-data-poster-DfsHSPMo.png" alt="Transform Data" width="100%"/>
-      <br/>
-      <b>Transform Data</b>
-      <br/>
-      <i>Data visualization hero</i>
+      <i>Landing page không gian hiện đại</i>
     </td>
     <td width="33%" align="center">
       <img src="public/assets/images/assets/hero-aethera-poster-DB6AdF0M.png" alt="Aethera" width="100%"/>
       <br/>
       <b>Aethera</b>
       <br/>
-      <i>Futuristic design system</i>
+      <i>Thiết kế tương lai đầy ấn tượng</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-deck-poster-yx2SqADM.png" alt="Deck" width="100%"/>
+      <br/>
+      <b>Deck</b>
+      <br/>
+      <i>Hero section tối giản, sang trọng</i>
     </td>
   </tr>
+</table>
+
+### 💼 Agency & Portfolio
+
+<table>
   <tr>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-velorah-poster-mLkXfzr9.png" alt="Velorah" width="100%"/>
+      <br/>
+      <b>Velorah Agency</b>
+      <br/>
+      <i>Website agency chuyên nghiệp</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-ai-designer-agency-poster-CQqRSMUo.png" alt="AI Designer" width="100%"/>
+      <br/>
+      <b>AI Designer Agency</b>
+      <br/>
+      <i>Portfolio thiết kế AI hiện đại</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-buzzentic-poster-7nm68cTe.png" alt="Buzzentic" width="100%"/>
+      <br/>
+      <b>Buzzentic</b>
+      <br/>
+      <i>Agency marketing sáng tạo</i>
+    </td>
+  </tr>
+</table>
+
+### 🚀 SaaS & Tech Platforms
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-grow-ai-poster-B-kSCKSN.png" alt="Grow AI" width="100%"/>
+      <br/>
+      <b>Grow AI Platform</b>
+      <br/>
+      <i>Nền tảng AI tuyển dụng</i>
+    </td>
     <td width="33%" align="center">
       <img src="public/assets/images/assets/hero-apex-saas-poster-CZ6BkKIa.png" alt="Apex SaaS" width="100%"/>
       <br/>
       <b>Apex SaaS</b>
       <br/>
-      <i>Modern SaaS platform</i>
+      <i>Platform SaaS hiện đại</i>
     </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-datacore-booking-poster-C4umG3DT.png" alt="Datacore" width="100%"/>
+      <br/>
+      <b>Datacore Booking</b>
+      <br/>
+      <i>Hệ thống đặt chỗ thông minh</i>
+    </td>
+  </tr>
+</table>
+
+### 🤖 AI & Innovation
+
+<table>
+  <tr>
     <td width="33%" align="center">
       <img src="public/assets/images/assets/hero-bloom-ai-poster-Bol1Pj7x.png" alt="Bloom AI" width="100%"/>
       <br/>
       <b>Bloom AI</b>
       <br/>
-      <i>AI-powered solutions</i>
+      <i>Giải pháp AI toàn diện</i>
     </td>
     <td width="33%" align="center">
-      <img src="public/assets/images/assets/hero-datacore-booking-poster-C4umG3DT.png" alt="Datacore Booking" width="100%"/>
+      <img src="public/assets/images/assets/hero-stellar-ai-poster-BQJztWy-.png" alt="Stellar AI" width="100%"/>
       <br/>
-      <b>Datacore Booking</b>
+      <b>Stellar AI</b>
       <br/>
-      <i>Booking platform design</i>
+      <i>Hero section với gradient động</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-neuralyn-poster-BrDgI9_4.png" alt="Neuralyn" width="100%"/>
+      <br/>
+      <b>Neuralyn</b>
+      <br/>
+      <i>Công nghệ AI thế hệ mới</i>
     </td>
   </tr>
 </table>
 
-### 📚 More Templates
+### 💎 Premium & Creative
 
-<details>
-<summary><b>View More Amazing Designs (55+ templates)</b></summary>
-
-#### Portfolio & Creative
-- Portfolio Cosmic
-- Bold Portfolio Hero
-- Dark Portfolio Hero
-- xPortfolio Hero
-- AI Designer Portfolio
-
-#### SaaS & Tech
-- Mindloop Landing
-- Datacore Booking
-- Apex SaaS
-- Neuralyn
-- ClearInvoice
-
-#### Agency & Business
-- Buzzentic Agency
-- Liquid Glass Agency
-- Glassmorphism Agency
-- Logoisum Video Agency
-
-#### E-commerce & Fintech
-- E-commerce Website
-- Wealth Video Hero
-- Nickel Payments
-
-#### Web3 & NFT
-- Orbis NFT
-- Orbit Web3
-- Web3 EOS Hero
-
-#### AI & Innovation
-- NeoVision
-- Bloom AI
-- Power AI
-- Stellar AI
-- Dora AI
-
-...and many more!
-
-</details>
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/promptverse.git
-
-# Navigate to project directory
-cd promptverse
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the app.
-
-### Build for Production
-
-```bash
-# Create optimized production build
-npm run build
-
-# Start production server
-npm start
-```
-
----
-
-## 📖 How to Use
-
-### 1️⃣ **Browse Templates**
-Explore our curated collection of 60+ design templates organized by category.
-
-### 2️⃣ **Copy Prompt**
-Click the "Copy" button on any unlocked template to copy the prompt to your clipboard.
-
-### 3️⃣ **Paste in AI Tool**
-Open your favorite AI tool (v0, Bolt, Cursor, Claude, etc.) and paste the prompt.
-
-### 4️⃣ **Generate & Customize**
-Let AI generate the code, then customize colors, content, and branding to match your needs.
-
-### 5️⃣ **Deploy**
-Deploy your beautiful landing page to Vercel, Netlify, or any hosting platform.
-
----
-
-## 🛠️ Tech Stack
-
-- **Framework:** [Next.js 15](https://nextjs.org/) - React framework with App Router
-- **Language:** [TypeScript](https://www.typescriptlang.org/) - Type-safe development
-- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS
-- **Icons:** [Lucide React](https://lucide.dev/) - Beautiful icon library
-- **Fonts:** [Google Fonts](https://fonts.google.com/) - Inter, Sora, Instrument Serif
-- **Deployment:** [Vercel](https://vercel.com/) - Optimized for Next.js
-
----
-
-## 📁 Project Structure
-
-```
-promptverse/
-├── app/                      # Next.js App Router
-│   ├── api/                 # API routes
-│   │   └── prompts/        # Prompt endpoints
-│   ├── instructions/       # Instructions page
-│   ├── layout.tsx          # Root layout
-│   ├── page.tsx            # Home page
-│   └── globals.css         # Global styles
-├── components/              # React components
-│   ├── copy-prompt-button.tsx
-│   └── unlock-contact-modal.tsx
-├── lib/                     # Utilities & data
-│   ├── home-data.ts        # Template data
-│   └── prompt-store.ts     # Prompt storage
-├── public/                  # Static assets
-│   └── assets/             # Images, fonts, etc.
-└── package.json            # Dependencies
-```
-
----
-
-## 🎨 Customization
-
-### Adding New Templates
-
-Edit `lib/home-data.ts`:
-
-```typescript
-{
-  "kind": "template",
-  "title": "Your Template Name",
-  "category": "Landing Page",
-  "rowSpan2": false,
-  "hasLoader": false,
-  "action": "copy", // or "premium"
-  "boltHref": "",
-  "media": [
-    {
-      "src": "/assets/images/your-preview.gif",
-      "alt": "Your Template Name",
-      "isPreview": false
-    }
-  ]
-}
-```
-
-### Customizing Colors
-
-Update `app/globals.css`:
-
-```css
-:root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-}
-```
-
-### Adding New AI Tools
-
-Edit `app/instructions/page.tsx` to add more supported tools with icons.
-
----
-
-## 🌟 Premium Features
-
-Unlock all 60+ premium templates and get:
-
-- ✨ **Full Prompt Library** - Access to all design templates
-- 🎯 **Advanced Prompts** - Optimized for specific AI tools
-- 🔄 **Regular Updates** - New templates added monthly
-- 💬 **Priority Support** - Direct assistance via Zalo/Facebook
-- 📚 **Documentation** - Detailed guides and best practices
-- 🎨 **Custom Requests** - Request specific design styles
-
----
-
-## 📞 Contact
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-bionova-poster-CPaKbq55.png" alt="Bionova" width="100%"/>
+      <br/>
+      <b>Bionova</b>
+      <br/>
+      <i>Thiết kế sinh học hiện đại</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-clubx-poster-Dwv_zKz1.png" alt="ClubX" width="100%"/>
+      <br/>
+      <b>ClubX</b>
+      <br/>
+      <i>Platform cộng đồng sáng tạo</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-transform-data-poster-DfsHSPMo.png" alt="Transform Data" width="100%"/>
+      <br/>
+      <b>Transform Data</b>
+      <br/>
+      <i>Trực quan hóa dữ liệu đẹp mắt</i>
+    </td>
+  </tr>
+</table>
 
 <div align="center">
 
-### 👨‍💻 Trịnh Văn Hào
+### **...và hơn 45+ mẫu thiết kế khác!**
 
-**Thiết kế bởi Trịnh Văn Hào**
-
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/trinhhao142.hayyier/)
-[![Zalo](https://img.shields.io/badge/Zalo-0068FF?style=for-the-badge&logo=zalo&logoColor=white)](https://zalo.me/0777228660)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:haotrinh142@gmail.com)
-
-📱 **Phone:** 0777228660  
-📧 **Email:** haotrinh142@gmail.com  
-🌐 **Facebook:** [facebook.com/trinhhao142.hayyier](https://www.facebook.com/trinhhao142.hayyier/)
+[🎨 Xem tất cả mẫu thiết kế →](https://promptverse.com)
 
 </div>
 
 ---
 
-## 📝 License
+## 🎯 Cách Sử Dụng
 
-This project is created and maintained by **Trịnh Văn Hào**.
-
-For commercial use or custom projects, please [contact me](#contact).
+<table>
+  <tr>
+    <td width="25%" align="center">
+      <h3>1️⃣</h3>
+      <b>Chọn Mẫu</b>
+      <br/>
+      <i>Duyệt qua 60+ mẫu thiết kế và chọn mẫu phù hợp</i>
+    </td>
+    <td width="25%" align="center">
+      <h3>2️⃣</h3>
+      <b>Copy Prompt</b>
+      <br/>
+      <i>Click nút Copy để sao chép prompt vào clipboard</i>
+    </td>
+    <td width="25%" align="center">
+      <h3>3️⃣</h3>
+      <b>Paste vào AI</b>
+      <br/>
+      <i>Mở v0, Bolt, Cursor hoặc AI tool yêu thích và paste</i>
+    </td>
+    <td width="25%" align="center">
+      <h3>4️⃣</h3>
+      <b>Tùy Chỉnh</b>
+      <br/>
+      <i>Điều chỉnh màu sắc, nội dung theo thương hiệu của bạn</i>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 🙏 Acknowledgments
-
-- Design inspiration from modern web trends
-- Built with love using Next.js and Tailwind CSS
-- Icons by [Lucide](https://lucide.dev/)
-- Fonts from [Google Fonts](https://fonts.google.com/)
-
----
+## 🤖 Tương Thích Với 16+ AI Tools
 
 <div align="center">
 
+| Tool | Mô tả | Phù hợp cho |
+|------|-------|-------------|
+| 🔷 **v0.dev** | Generate UI components tức thì | Landing pages, Components |
+| ⚡ **Bolt.new** | Full-stack apps với live preview | Complete websites |
+| 💖 **Lovable** | Landing pages với animations | Marketing sites |
+| 💻 **Cursor** | AI-powered IDE coding | Custom development |
+| 🌊 **Windsurf** | Advanced code generation | Complex projects |
+| 🤖 **Claude** | Production-ready code | Enterprise apps |
+| 🧠 **ChatGPT** | Versatile AI assistant | General purpose |
+| ✨ **Gemini** | Google's powerful AI | Multi-modal projects |
+| 💡 **AI Studio** | System instruction optimization | Fine-tuned results |
+| 📦 **Replit** | Instant deployment | Quick prototypes |
+| ⚡ **Vercel** | Edge deployment | Production sites |
+| 🎨 **Framer** | Design to code | Design systems |
+| 🌐 **Webflow** | Visual development | No-code solutions |
+| 🪄 **Dora AI** | No-code AI builder | Visual builders |
+| 🔮 **Galileo** | AI design system | Design tokens |
+| 🚀 **Uizard** | Rapid prototyping | Quick mockups |
+
+</div>
+
+---
+
+## 💎 Gói Premium
+
+### 🎁 Mở Khóa Toàn Bộ Thư Viện
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3>✨ Bạn Nhận Được:</h3>
+      <ul>
+        <li>✅ <b>60+ Premium Prompts</b> - Truy cập đầy đủ</li>
+        <li>✅ <b>Cập Nhật Hàng Tháng</b> - Mẫu mới liên tục</li>
+        <li>✅ <b>Hỗ Trợ Ưu Tiên</b> - Qua Zalo/Facebook</li>
+        <li>✅ <b>Tùy Chỉnh Theo Yêu Cầu</b> - Thiết kế riêng</li>
+        <li>✅ <b>Hướng Dẫn Chi Tiết</b> - Video & docs</li>
+        <li>✅ <b>Lifetime Updates</b> - Cập nhật trọn đời</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>🎯 Phù Hợp Cho:</h3>
+      <ul>
+        <li>🚀 <b>Startups</b> - Tạo MVP nhanh chóng</li>
+        <li>💼 <b>Freelancers</b> - Giao hàng nhanh cho khách</li>
+        <li>🎨 <b>Designers</b> - Prototype ý tưởng</li>
+        <li>👨‍💻 <b>Developers</b> - Tiết kiệm thời gian code</li>
+        <li>📱 <b>Marketers</b> - Landing pages đẹp</li>
+        <li>🏢 <b>Agencies</b> - Thư viện cho team</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<div align="center">
+
+### 💰 Giá Đặc Biệt
+
+**Liên hệ ngay để nhận ưu đãi!**
+
+[![Liên hệ Zalo](https://img.shields.io/badge/Liên_hệ_Zalo-0068FF?style=for-the-badge&logo=zalo&logoColor=white)](https://zalo.me/0777228660)
+[![Nhắn tin Facebook](https://img.shields.io/badge/Facebook_Messenger-1877F2?style=for-the-badge&logo=messenger&logoColor=white)](https://www.facebook.com/trinhhao142.hayyier/)
+
+</div>
+
+---
+
+## 📞 Liên Hệ
+
+<div align="center">
+
+### 👨‍💻 Trịnh Văn Hào
+**Founder & Designer**
+
+<img src="public/assets/images/assets/tvh.png" alt="Trịnh Văn Hào" width="200"/>
+
+---
+
+📱 **Zalo:** [0777228660](https://zalo.me/0777228660)  
+💬 **Facebook:** [facebook.com/trinhhao142.hayyier](https://www.facebook.com/trinhhao142.hayyier/)  
+📧 **Email:** haotrinh142@gmail.com  
+☎️ **Phone:** 0777 228 660
+
+---
+
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/trinhhao142.hayyier/)
+[![Zalo](https://img.shields.io/badge/Zalo-0068FF?style=for-the-badge&logo=zalo&logoColor=white)](https://zalo.me/0777228660)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:haotrinh142@gmail.com)
+
+</div>
+
+---
+
+## ❓ Câu Hỏi Thường Gặp
+
+<details>
+<summary><b>🤔 Tôi có cần biết code không?</b></summary>
+<br>
+Không! Bạn chỉ cần copy prompt và paste vào AI tool. AI sẽ generate code cho bạn. Sau đó bạn có thể tùy chỉnh màu sắc, text theo ý muốn.
+</details>
+
+<details>
+<summary><b>💰 Giá bao nhiêu?</b></summary>
+<br>
+Có 5 mẫu miễn phí để bạn dùng thử. Để mở khóa toàn bộ 60+ mẫu premium, vui lòng liên hệ qua Zalo hoặc Facebook để nhận báo giá ưu đãi.
+</details>
+
+<details>
+<summary><b>🔄 Có được cập nhật không?</b></summary>
+<br>
+Có! Thư viện được cập nhật hàng tháng với các mẫu thiết kế mới. Khách hàng premium nhận lifetime updates miễn phí.
+</details>
+
+<details>
+<summary><b>🎨 Tôi có thể tùy chỉnh không?</b></summary>
+<br>
+Hoàn toàn được! Sau khi AI generate code, bạn có thể thay đổi màu sắc, font chữ, nội dung, hình ảnh theo thương hiệu của bạn.
+</details>
+
+<details>
+<summary><b>🤖 AI tool nào tốt nhất?</b></summary>
+<br>
+Tùy nhu cầu:
+- <b>v0.dev</b>: Tốt nhất cho React components
+- <b>Bolt.new</b>: Tốt cho full-stack apps
+- <b>Cursor</b>: Tốt cho developers muốn control code
+- <b>Claude</b>: Tốt cho enterprise projects
+</details>
+
+<details>
+<summary><b>📱 Có responsive không?</b></summary>
+<br>
+Có! Tất cả prompts đều được thiết kế responsive, hoạt động tốt trên mobile, tablet và desktop.
+</details>
+
+<details>
+<summary><b>🚀 Deploy như thế nào?</b></summary>
+<br>
+Sau khi có code, bạn có thể deploy lên:
+- Vercel (khuyên dùng cho Next.js)
+- Netlify
+- GitHub Pages
+- Hoặc hosting bất kỳ
+</details>
+
+---
+
+## 🌟 Testimonials
+
+> *"Promptverse giúp tôi tạo landing page cho startup trong 30 phút. Cực kỳ tiết kiệm thời gian!"*  
+> **— Nguyễn Văn A, Founder @ TechStartup**
+
+> *"Là freelancer, tôi dùng Promptverse để giao hàng nhanh cho khách. Chất lượng tuyệt vời!"*  
+> **— Trần Thị B, Freelance Designer**
+
+> *"60+ mẫu thiết kế đẹp, dễ customize. Đáng đồng tiền bát gạo!"*  
+> **— Lê Văn C, Web Developer**
+
+---
+
+## 🎉 Bắt Đầu Ngay
+
+<div align="center">
+
+### **Sẵn sàng tạo website đẹp trong vài phút?**
+
+[![Truy cập Promptverse](https://img.shields.io/badge/🌐_Truy_cập_ngay-4CAF50?style=for-the-badge)](https://promptverse.com)
+[![Liên hệ Zalo](https://img.shields.io/badge/💬_Chat_Zalo-0068FF?style=for-the-badge)](https://zalo.me/0777228660)
+[![Facebook](https://img.shields.io/badge/📱_Facebook-1877F2?style=for-the-badge)](https://www.facebook.com/trinhhao142.hayyier/)
+
+---
+
 **Made with ❤️ by Trịnh Văn Hào**
 
-⭐ Star this repo if you find it helpful!
-
-[Back to Top ↑](#-promptverse---ai-design-prompt-library)
+⭐ Nếu thấy hữu ích, hãy star repo này!
 
 </div>
