@@ -71,29 +71,77 @@ Prompts hoạt động seamlessly với:
 
 ### 🌟 Featured Templates
 
-<div align="center">
-
-#### Space Voyage - Landing Page
-![Space Voyage](public/assets/images/assets/hero-space-voyage-preview-eECLH3Yc.gif)
-*Modern space-themed landing page with smooth animations*
-
-#### Velorah - Agency
-![Velorah](public/assets/images/assets/hero-velorah-preview-CJNTtbpd.gif)
-*Elegant agency website with professional layout*
-
-#### Grow AI - SaaS Platform
-![Grow AI](public/assets/images/assets/hero-grow-ai-preview-BlQ8tAQ-.gif)
-*AI-powered talent platform with modern UI*
-
-#### Sync AI - Hero Section
-![Sync AI](public/assets/images/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif)
-*Dynamic hero section with gradient effects*
-
-#### Transform Data - Hero Section
-![Transform Data](public/assets/images/assets/hero-transform-data-preview-Cx5OU29N.gif)
-*Data visualization hero with interactive elements*
-
-</div>
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-space-voyage-poster-Dti9x8oS.png" alt="Space Voyage" width="100%"/>
+      <br/>
+      <b>Space Voyage</b>
+      <br/>
+      <i>Modern space-themed landing page</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-velorah-poster-mLkXfzr9.png" alt="Velorah" width="100%"/>
+      <br/>
+      <b>Velorah - Agency</b>
+      <br/>
+      <i>Elegant agency website</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-grow-ai-poster-B-kSCKSN.png" alt="Grow AI" width="100%"/>
+      <br/>
+      <b>Grow AI - SaaS Platform</b>
+      <br/>
+      <i>AI-powered talent platform</i>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-stellar-ai-poster-BQJztWy-.png" alt="Stellar AI" width="100%"/>
+      <br/>
+      <b>Stellar AI</b>
+      <br/>
+      <i>Dynamic hero with gradients</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-transform-data-poster-DfsHSPMo.png" alt="Transform Data" width="100%"/>
+      <br/>
+      <b>Transform Data</b>
+      <br/>
+      <i>Data visualization hero</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-aethera-poster-DB6AdF0M.png" alt="Aethera" width="100%"/>
+      <br/>
+      <b>Aethera</b>
+      <br/>
+      <i>Futuristic design system</i>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-apex-saas-poster-CZ6BkKIa.png" alt="Apex SaaS" width="100%"/>
+      <br/>
+      <b>Apex SaaS</b>
+      <br/>
+      <i>Modern SaaS platform</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-bloom-ai-poster-Bol1Pj7x.png" alt="Bloom AI" width="100%"/>
+      <br/>
+      <b>Bloom AI</b>
+      <br/>
+      <i>AI-powered solutions</i>
+    </td>
+    <td width="33%" align="center">
+      <img src="public/assets/images/assets/hero-datacore-booking-poster-C4umG3DT.png" alt="Datacore Booking" width="100%"/>
+      <br/>
+      <b>Datacore Booking</b>
+      <br/>
+      <i>Booking platform design</i>
+    </td>
+  </tr>
+</table>
 
 ### 📚 More Templates
 
