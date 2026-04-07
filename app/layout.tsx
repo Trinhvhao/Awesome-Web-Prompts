@@ -37,12 +37,12 @@ const instrumentSerifArt = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://promptverse.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://awesome-web-prompts.vercel.app'),
   title: {
-    default: "Promptverse - Trịnh Văn Hào | AI Design Prompts Library",
+    default: "Promptverse - 60+ Prompt Thiết Kế AI",
     template: "%s | Promptverse"
   },
-  description: "Thư viện giao diện và prompt thiết kế bởi Trịnh Văn Hào. Xây dựng landing page đẹp trong vài phút với bộ prompt có sẵn cho v0, Bolt, Cursor, Claude và nhiều AI tools khác.",
+  description: "60+ prompt thiết kế chuyên nghiệp cho v0, Bolt, Cursor. Copy, paste và tạo landing page đẹp trong vài phút.",
   keywords: [
     "AI design",
     "prompts",
@@ -70,24 +70,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     alternateLocale: ["en_US"],
-    title: "Promptverse - AI Design Prompts Library",
-    description: "Xây dựng landing page đẹp trong vài phút với bộ prompt có sẵn cho v0, Bolt, Cursor, Claude và nhiều AI tools khác",
+    title: "Promptverse - 60+ Prompt Thiết Kế AI",
+    description: "Copy, paste và tạo landing page đẹp trong vài phút. Tương thích v0, Bolt, Cursor, Claude.",
     siteName: "Promptverse",
-    url: "/",
+    url: "https://awesome-web-prompts.vercel.app",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://awesome-web-prompts.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Promptverse - AI Design Prompts Library by Trịnh Văn Hào",
+        alt: "Promptverse - AI Design Prompts Library",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Promptverse - AI Design Prompts Library",
-    description: "Xây dựng landing page đẹp trong vài phút với bộ prompt có sẵn",
-    images: ["/og-image.png"],
+    title: "Promptverse - 60+ Prompt Thiết Kế AI",
+    description: "Copy, paste và tạo landing page đẹp trong vài phút",
+    images: ["https://awesome-web-prompts.vercel.app/og-image.png"],
     creator: "@trinhvanhao",
   },
   robots: {
@@ -102,10 +103,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://awesome-web-prompts.vercel.app",
     languages: {
-      'vi-VN': '/vi',
-      'en-US': '/en',
+      'vi-VN': 'https://awesome-web-prompts.vercel.app/vi',
+      'en-US': 'https://awesome-web-prompts.vercel.app/en',
     },
   },
   verification: {

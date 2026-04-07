@@ -296,18 +296,9 @@ Mọi prompt đều được test kỹ lưỡng, responsive, và tối ưu cho m
 <div align="center">
 
 ### 👨‍💻 Trịnh Văn Hào
-**Founder & Designer**
 
 <img src="public/assets/images/assets/tvh.png" alt="Trịnh Văn Hào" width="200"/>
 
----
-
-📱 **Zalo:** [0777228660](https://zalo.me/0777228660)  
-💬 **Facebook:** [facebook.com/trinhhao142.hayyier](https://www.facebook.com/trinhhao142.hayyier/)  
-📧 **Email:** haotrinh142@gmail.com  
-☎️ **Phone:** 0777 228 660
-
----
 
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/trinhhao142.hayyier/)
 [![Zalo](https://img.shields.io/badge/Zalo-0068FF?style=for-the-badge&logo=zalo&logoColor=white)](https://zalo.me/0777228660)
