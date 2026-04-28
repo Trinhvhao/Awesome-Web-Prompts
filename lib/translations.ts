@@ -14,7 +14,7 @@ export const translations = {
         },
         // Hero Section
         hero: {
-            designedBy: "Thiết kế bởi",
+            designedBy: "Tạo bởi",
             unlockPower: "Mở khóa sức mạnh",
             aiDesign: "thiết kế AI",
             breakthrough: "đột phá",
