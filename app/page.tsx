@@ -2,23 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Lock, Sparkles } from "lucide-react";
-import { useCallback, useState, type ReactNode } from "react";
-import dynamic from 'next/dynamic';
+import { Sparkles } from "lucide-react";
+import { type ReactNode } from "react";
 
 import { HOME_PAGE_DATA, type GridItem, type TemplateCard } from "@/lib/home-data";
 import CopyPromptButton from "../components/copy-prompt-button";
 import { LanguageSwitcher, useLanguage } from "@/components/language-switcher";
 import { getTranslation } from "@/lib/translations";
-
-// Lazy load modal - chỉ load khi cần
-const UnlockContactModal = dynamic(
-  () => import('@/components/unlock-contact-modal'),
-  {
-    ssr: false,
-    loading: () => null
-  }
-);
 
 const BRAND_NAME = "Trịnh Văn Hào";
 const BRAND_LOGO_SRC = "/assets/images/assets/tvh.png";
@@ -43,10 +33,6 @@ function NavHref({ href, className, children }: { href: string; className: strin
   );
 }
 
-function isUnlimitedHref(href: string): boolean {
-  return href.includes("/pages/pricing");
-}
-
 function MenuIcon() {
   return (
     <svg
@@ -68,17 +54,10 @@ function MenuIcon() {
   );
 }
 
-function TemplateCardView({ item, onUnlock, index }: { item: TemplateCard; onUnlock: (title: string) => void; index: number }) {
+function TemplateCardView({ item }: { item: TemplateCard }) {
   const language = useLanguage();
   const t = getTranslation(language);
-  const [gifLoaded, setGifLoaded] = useState(false);
-
-  // Priority cho 4 templates đầu tiên
-  const isPriority = index < 4;
-
-  // Tách PNG poster và GIF preview
-  const posterImage = item.media.find(m => !m.isPreview); // PNG
-  const previewGif = item.media.find(m => m.isPreview);   // GIF
+  const shouldPrioritizeMedia = item.hasLoader && item.media.length === 1;
 
   return (
     <article
@@ -87,82 +66,33 @@ function TemplateCardView({ item, onUnlock, index }: { item: TemplateCard; onUnl
       <div
         className={`relative w-full rounded-xl overflow-hidden mb-3 ${item.rowSpan2 ? "aspect-[3/4] md:aspect-auto md:flex-1 md:min-h-0" : "aspect-[4/3]"}`}
       >
-        {/* Skeleton loader */}
-        {!posterImage && item.hasLoader && (
-          <div className="absolute inset-0 bg-secondary animate-pulse" />
-        )}
-
-        {/* PNG Poster - Load ngay, luôn hiển thị */}
-        {posterImage && (
+        {item.hasLoader ? <div className="absolute inset-0 bg-secondary animate-pulse" /> : null}
+        {item.media.map((media) => (
           <Image
-            alt={posterImage.alt}
+            alt={media.alt}
             className="absolute inset-0 w-full h-full object-cover object-top"
             decoding="async"
             fill
-            loading={isPriority ? "eager" : "lazy"}
-            priority={isPriority}
-            quality={85}
+            fetchPriority={shouldPrioritizeMedia ? "high" : media.isPreview ? "low" : "auto"}
+            key={`${item.title}-${media.src}`}
+            loading={shouldPrioritizeMedia ? "eager" : "lazy"}
             sizes={item.rowSpan2 ? "(max-width: 1024px) 50vw, 25vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
-            src={posterImage.src}
+            src={media.src}
             unoptimized
           />
-        )}
-
-        {/* GIF Preview - Load sau, fade in khi ready */}
-        {previewGif && (
-          <Image
-            alt={previewGif.alt}
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700 ${gifLoaded ? 'opacity-100' : 'opacity-0'}`}
-            decoding="async"
-            fill
-            fetchPriority="low"
-            loading="lazy"
-            onLoad={() => setGifLoaded(true)}
-            quality={75}
-            sizes={item.rowSpan2 ? "(max-width: 1024px) 50vw, 25vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
-            src={previewGif.src}
-            unoptimized
-          />
-        )}
-
-        {/* Nếu chỉ có 1 media (GIF only) */}
-        {item.media.length === 1 && !posterImage && (
-          <Image
-            alt={item.media[0].alt}
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 ${gifLoaded ? 'opacity-100' : 'opacity-0'}`}
-            decoding="async"
-            fill
-            loading="lazy"
-            onLoad={() => setGifLoaded(true)}
-            quality={75}
-            sizes={item.rowSpan2 ? "(max-width: 1024px) 50vw, 25vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
-            src={item.media[0].src}
-            unoptimized
-          />
-        )}
+        ))}
       </div>
 
-      <div className="flex items-center justify-between gap-3 px-4 py-3">
+      <div className="flex items-center justify-between gap-3 px-4 py-3 relative z-10">
         <div className="min-w-0">
           <h3 className="text-foreground font-bold text-lg truncate">{item.title}</h3>
           <span className="text-muted-foreground text-sm">{item.category}</span>
         </div>
 
-        {item.action === "copy" ? (
-          <CopyPromptButton
-            className="flex items-center gap-1.5 bg-secondary hover:bg-accent text-muted-foreground hover:text-foreground px-3 py-2 rounded-xl text-sm font-medium transition-colors disabled:opacity-50"
-            title={item.title}
-          />
-        ) : (
-          <button
-            className="inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white/90 transition hover:border-white/30 hover:bg-white/15"
-            onClick={() => onUnlock(item.title)}
-            type="button"
-          >
-            <Lock className="h-4 w-4" />
-            {t.cards.unlock}
-          </button>
-        )}
+        <CopyPromptButton
+          className="flex items-center gap-1.5 bg-secondary hover:bg-accent text-muted-foreground hover:text-foreground px-3 py-2 rounded-xl text-sm font-medium transition-colors disabled:opacity-50 whitespace-nowrap"
+          title={item.title}
+        />
       </div>
     </article>
   );
@@ -211,24 +141,8 @@ function PromoCardView({ item }: { item: Extract<GridItem, { kind: "promo" }> })
 }
 
 export default function Home() {
-  const [isUnlockModalOpen, setIsUnlockModalOpen] = useState(false);
-  const [selectedTemplateTitle, setSelectedTemplateTitle] = useState<string | null>(null);
-  const [visibleItems, setVisibleItems] = useState(12); // Chỉ hiển thị 12 items đầu tiên
   const language = useLanguage();
   const t = getTranslation(language);
-
-  const openUnlockModal = useCallback((title?: string) => {
-    setSelectedTemplateTitle(title ?? null);
-    setIsUnlockModalOpen(true);
-  }, []);
-
-  const closeUnlockModal = useCallback(() => {
-    setIsUnlockModalOpen(false);
-  }, []);
-
-  const loadMore = useCallback(() => {
-    setVisibleItems(prev => Math.min(prev + 12, HOME_PAGE_DATA.gridItems.length));
-  }, []);
 
   // Prevent rendering until translations are loaded
   if (!t || !t.hero) {
@@ -265,19 +179,6 @@ export default function Home() {
                 label = t.nav.instructions;
               } else if (menuLink.href.includes("/pages/pricing")) {
                 label = t.nav.pricing;
-              }
-
-              if (isUnlimitedHref(menuLink.href)) {
-                return (
-                  <button
-                    className="px-3 sm:px-4 py-2 text-muted-foreground text-sm font-medium rounded-lg hover:text-foreground hover:bg-white/5 transition-all duration-300 flex items-center group"
-                    key={menuLink.href}
-                    onClick={() => openUnlockModal(label)}
-                    type="button"
-                  >
-                    <span className="relative group-hover:-translate-y-0.5 transition-transform duration-300 inline-block">{label}</span>
-                  </button>
-                );
               }
 
               return (
@@ -319,13 +220,12 @@ export default function Home() {
               );
             })}
 
-            <button
+            <NavHref
               className="px-5 py-2 bg-foreground text-background text-sm font-medium rounded-lg hover:opacity-90 hover:scale-105 hover:bg-neutral-200 transition-all duration-300 ml-2"
-              onClick={() => openUnlockModal(t.nav.unlimitedAccess)}
-              type="button"
+              href={HOME_PAGE_DATA.primaryNavLink.href}
             >
               {t.nav.unlimitedAccess}
-            </button>
+            </NavHref>
 
             <LanguageSwitcher />
           </div>
@@ -391,46 +291,24 @@ export default function Home() {
             {t.hero.description}<br />{t.hero.descriptionLine2}
           </p>
 
-          {isUnlimitedHref(HOME_PAGE_DATA.hero.ctaHref) ? (
-            <button
-              className="flex items-center justify-center gap-1 px-8 py-2 h-14 text-lg font-semibold rounded-full border-t-2 border-white cursor-pointer hover:opacity-90 transition-opacity mb-6"
-              onClick={() => openUnlockModal(HOME_PAGE_DATA.hero.ctaText)}
-              type="button"
-            >
-              <Sparkles className="h-4 w-4" />
-              {HOME_PAGE_DATA.hero.ctaText}
-            </button>
-          ) : (
-            <NavHref
-              className="flex items-center justify-center gap-1 px-8 py-2 h-14 text-lg font-semibold rounded-full border-t-2 border-white cursor-pointer hover:opacity-90 transition-opacity mb-6"
-              href={HOME_PAGE_DATA.hero.ctaHref}
-            >
-              {HOME_PAGE_DATA.hero.ctaText}
-            </NavHref>
-          )}
+          <NavHref
+            className="flex items-center justify-center gap-1 px-8 py-2 h-14 text-lg font-semibold rounded-full border-t-2 border-white cursor-pointer hover:opacity-90 transition-opacity mb-6"
+            href={HOME_PAGE_DATA.hero.ctaHref}
+          >
+            <Sparkles className="h-4 w-4" />
+            {HOME_PAGE_DATA.hero.ctaText}
+          </NavHref>
         </header>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pb-6" style={{ gridAutoRows: "auto" }}>
-          {HOME_PAGE_DATA.gridItems.slice(0, visibleItems).map((item, index) =>
+          {HOME_PAGE_DATA.gridItems.map((item, index) =>
             item.kind === "template" ? (
-              <TemplateCardView item={item} index={index} key={`${item.title}-${index}`} onUnlock={openUnlockModal} />
+              <TemplateCardView item={item} key={`${item.title}-${index}`} />
             ) : (
               <PromoCardView item={item} key={`promo-${index}`} />
             ),
           )}
         </section>
-
-        {visibleItems < HOME_PAGE_DATA.gridItems.length && (
-          <div className="flex justify-center pb-12">
-            <button
-              onClick={loadMore}
-              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-orange-400 hover:from-purple-400 hover:to-orange-300 text-white font-semibold rounded-xl shadow-lg hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105"
-              type="button"
-            >
-              Xem thêm {Math.min(12, HOME_PAGE_DATA.gridItems.length - visibleItems)} mẫu →
-            </button>
-          </div>
-        )}
 
 
 
@@ -439,7 +317,6 @@ export default function Home() {
         </footer>
       </div >
 
-      <UnlockContactModal isOpen={isUnlockModalOpen} onClose={closeUnlockModal} sourceTitle={selectedTemplateTitle} />
     </main >
   );
 }
